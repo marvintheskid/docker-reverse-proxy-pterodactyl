@@ -10,7 +10,7 @@ RUN apk add --no-cache curl
 
 # Download ngrok
 RUN curl -Lo /proxy.tar.gz https://github.com/vaperion/reverse-proxy/releases/download/${VERSION}/${VERSION}-${RUSTTARGET}.tar.gz \
-    && tar -xzf -o /proxy.tar.gz /bin \
+    && tar -xzf /proxy.tar.gz -C /bin \
     && rm -f /proxy.tar.gz
 
 USER container
