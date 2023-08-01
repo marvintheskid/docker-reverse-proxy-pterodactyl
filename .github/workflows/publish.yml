@@ -11,13 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: ["linux/amd64", "linux/386"]
-        arch: ["x86_64-unknown-linux-gnu", "i686-unknown-linux-gnu"]
+        arch: ["linux/amd64", "linux/386"]
+        target: ["x86_64-unknown-linux-gnu", "i686-unknown-linux-gnu"]
         exclude:
-          - target: "linux/amd64"
-            arch: "i686-unknown-linux-gnu"
-          - target: "linux/386"
-            arch: "x86_64-unknown-linux-gnu"
+          - arch: "linux/amd64"
+            target: "i686-unknown-linux-gnu"
+          - arch: "linux/386"
+            target: "x86_64-unknown-linux-gnu"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
